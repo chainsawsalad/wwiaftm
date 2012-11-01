@@ -1,0 +1,137 @@
+.wwiaftm-container {
+	position: relative;
+	width: 200px;
+	height: 275px;
+	margin: auto;
+}
+
+.wwiaftm {
+	background: red;
+	position: absolute;
+	margin: auto;
+	border-radius: 25%;
+	-webkit-border-radius: 25%;
+}
+
+.base {
+	width: 60px;
+	height: 80px;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
+
+.body-1, .body-2, .head {
+	top: -60px;
+	height: 80px;
+	width: 60px;
+	-webkit-transform: rotate3d(0,0,1,0deg);
+}
+
+.body-1 {
+	-webkit-animation: body-flail 4s linear infinite;
+	-webkit-transform-origin: 0 0;
+}
+
+.body-2 {
+	-webkit-animation: body-flail 3s linear infinite;
+	-webkit-transform-origin: 0 0;
+}
+
+.head {
+	-webkit-animation: body-flail 2s linear infinite;
+	-webkit-transform-origin: 0 0;
+	z-index: 1;
+}
+
+.head .eye, .head .mouth {
+	height: 20%;
+	width: 15%;
+	background: black;
+	position: absolute;
+	top: 25%;
+}
+
+.head .eye.right {
+	right: 20%;
+}
+
+.head .eye.left {
+	left: 20%;
+}
+
+.head .mouth {
+	width: 70%;
+	top: 60%;
+	height: 5%;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+.arm-1, .arm-2 {
+	position: absolute;
+	width: 50px;
+	height: 20px;
+	right: 90%;
+	top: 25%;
+	-webkit-animation: arm-flail 1s linear infinite;
+	-webkit-transform-origin: 100% 50%;
+}
+
+.arm-1.right, .arm-2.right {
+	left: 90%;
+	-webkit-transform-origin: 0% 50%;
+}
+
+.arm-1 .arm-2 {
+-webkit-animation: arm-flail .5s linear infinite;
+	right: 80%;
+	top: auto;
+}
+
+.arm-1 .arm-2.right {
+	left: 80%;
+	right: auto;
+}
+
+@-webkit-keyframes arm-flail {
+	0% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+	}
+	25% {
+		-webkit-transform: rotate3d(0,0,1,50deg);
+	}
+	50% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+	}
+	75% {
+		-webkit-transform: rotate3d(0,0,1,-50deg);
+	}
+	100% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+	}
+}
+
+@-webkit-keyframes body-flail {
+	0% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+		-webkit-transform-origin: 50% 50%;
+	}
+	25% {
+		-webkit-transform: rotate3d(0,0,1,50deg);
+		-webkit-transform-origin: 0 100%;
+	}
+	50% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+		-webkit-transform-origin: 50% 50%;
+	}
+	75% {
+		-webkit-transform: rotate3d(0,0,1,-50deg);
+		-webkit-transform-origin: 100% 100%;
+	}
+	100% {
+		-webkit-transform: rotate3d(0,0,1,0deg);
+		-webkit-transform-origin: 50% 50%;
+	}
+}
